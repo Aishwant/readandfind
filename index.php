@@ -21,8 +21,7 @@
 
 </section>
 
-<div class="left-img">
-</div>
+<div class="left-img"></div>
 
 <section class="content">
 	<center>

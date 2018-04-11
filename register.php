@@ -20,8 +20,7 @@
 
 </section>
 
-<div class="left-img">
-</div>
+<div class="left-img"></div>
 
 <section class="content">
 
@@ -38,7 +37,8 @@
             </h6>
         </div>
         <input type="submit" name="submit" value="Register" class="btn btnCSS">
-
+        <br /><br />
+        <p><a href="/ReadAndFind/" class="needunderline">Already have an account?</a></p>
     <?php form_setup_end(); ?>
 
 </section>

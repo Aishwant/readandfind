@@ -36,8 +36,8 @@ body{
     /* border-top-left-radius: 10%;*/
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
-    color:#fff !important;
-    -webkit-text-fill-color: #fff;
+    color:#ccc !important;
+    -webkit-text-fill-color: #ccc;
     opacity: 0.9!important;
     box-shadow: none;
     -webkit-box-shadow: none;
