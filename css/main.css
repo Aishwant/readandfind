@@ -1,0 +1,127 @@
+body{
+    font-family: cursive !important;
+    margin-top: 0;
+    padding-top: 0;
+    height: 100%;
+}
+
+/* footer{
+    margin-bottom: 0;
+    margin-top: 45%;
+} */
+.content{
+    padding-top: 5%;
+}
+
+.left-img{
+    top: 20%;
+    left:5%;
+    background-image: url("../images/books.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 150px;
+    height: 150px;
+    opacity: 0.9;
+    position: fixed;
+    z-index: -1;
+}
+
+.form{
+    margin-top: 5%;
+}
+
+.input-style{
+    border: none;
+    border-bottom:solid 2px #fff;
+    /* border-top-left-radius: 10%;*/
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    color:#fff !important;
+    -webkit-text-fill-color: #fff;
+    opacity: 0.9!important;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline-style: none !important;
+    background-color:#484848;
+}
+
+/* .input-style:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    outline-style: none !important;
+} */
+
+.needunderline{
+    text-decoration: none;
+    color: #ccc;
+}
+
+
+.needunderline:hover{
+    text-decoration: underline;
+    color: #ccc;
+}
+
+.form-style{
+    padding: 50px;
+    background-color: #484848;
+    border: #ccc solid 1px;
+    -webkit-text-fill-color: #fff;
+    color:#fff;
+    border-radius: 20%;
+}
+
+.no-padding{
+    padding:0;
+}
+
+.form-style .alert-login{
+    border: solid rgb(148, 0, 0) 1px;
+    background-blend-mode: multiply;
+    background-color: #f04141;
+    position: absolute;
+    left: 34.33%;
+    z-index: 2;
+    color: #fff !important;
+    -webkit-text-fill-color:#fff;
+    padding: 4px;
+    top:0px;
+}
+
+.register-form{
+    padding: 50px;
+    background-color: #484848;
+    border: #484848 solid 1px;
+    -webkit-text-fill-color: #f3a62c;
+    color:#f3a62c;
+}
+
+.col{
+    width: 100%;
+    min-height: 100vh;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.col div:nth-of-type(1){
+    -webkit-flex-grow: 2;
+    flex-grow: 2;
+    background-image: url("../images/book2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.btnCSS{
+    color: #fff;
+    background-color: #f3a62c;
+    border-color: #f3a62c;
+}
+
+.btnCSS:hover{
+    color: #f3a62c !important;
+    -webkit-text-fill-color: #f3a62c;
+    background-color: #fff!important;
+    border-color: #fff;
+}

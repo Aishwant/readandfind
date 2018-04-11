@@ -1,0 +1,30 @@
+MariaDB [aghimire]> source advancedSQLQueries.sql;
++----------+----------+----------------------+
+| FName    | LName    | Number of Books read |
++----------+----------+----------------------+
+| Aishwant | Ghimire  |                    8 |
+| Prassu   | KC       |                    5 |
+| Mohit    | Nakarmi  |                    3 |
+| Yunik    | Tamrakar |                    9 |
++----------+----------+----------------------+
+4 rows in set (0.00 sec)
+
++------------------------------+
+| People who have read Macbeth |
++------------------------------+
+| Aishwant                     |
+| Yunik                        |
++------------------------------+
+2 rows in set (0.00 sec)
+
++----------+--------------------------+
+| FName    | Author's Last Name       |
++----------+--------------------------+
+| Aishwant | Shakespear,Spark,Brown   |
+| Mohit    | Shakespear,Spark         |
+| Prassu   | Rowling,Spark,Shakespear |
+| Yunik    | Shakespear,Brown,Rowling |
++----------+--------------------------+
+4 rows in set (0.00 sec)
+
+MariaDB [aghimire]> notee;
