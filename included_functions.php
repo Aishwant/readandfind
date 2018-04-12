@@ -3,6 +3,27 @@
         echo 'hello World';
     }
 
+    function new_header($title){
+        echo "<!DOCTYPE html>
+        <html>
+        <head>
+            <meta http-equiv='Content-Type' content='text/html' charset='utf-8' />
+            <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+            <title>$title</title>
+
+            <link rel='stylesheet' href='css/bootstrap.min.css' />
+            <link rel='stylesheet' href='css/main.css' />
+
+        </head>
+        <body>
+
+        <section class='header'>
+
+        </section>";
+    }
+
     function form_setup_start($Page,$welcome=""){
         echo "<div class='container'>
                 <div class='row'>

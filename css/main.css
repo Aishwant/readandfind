@@ -115,3 +115,12 @@ body{
     background-color: #fff!important;
     border-color: #fff;
 }
+
+.form-control{
+    width: 50%;
+    display: inline;
+}
+
+.form-control-edit{
+    width: 70%;
+}

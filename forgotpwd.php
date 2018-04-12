@@ -3,15 +3,7 @@
     include('included_functions.php');
 ?>
 
-<html>
-<head>
-    <title>Forgot Password</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
-
-</head>
-<body>
+<?php new_header('Forgot Password'); ?>
 
 <div class="left-img"></div>
 
@@ -35,26 +27,5 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
 
-<script>
-
-    (function check(){
-        'use strict';
-        window.addEventListener('load', function(){
-            //fetch all the forms we want to apply custom Validation
-            var forms = document.getElementsByClassName('needs-validation');
-            //Loop over them and prevent submission
-            var validation = Array.prototype.filter.call(forms,function(form){
-                form.addEventListener('submit',function(event){
-                    if (form.checkValidity() === false){
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                },false);
-            });
-        }, false);
-    })();
-
-</script>
 </body>
 </html>
