@@ -24,11 +24,8 @@
 <div class="left-img"></div>
 
 <section class="content">
-	<center>
-			<h1>Welcome</h1>
-	</center>
 
-	<?php form_setup_start("Login Here");
+	<?php form_setup_start("Login Here","Welcome");
 
 			if(isset($_POST['submit'])){
 				if(isset($_POST['email_id']) && isset($_POST['pwd']) && !empty($_POST['email_id']) && !empty($_POST['pwd'])){
