@@ -118,6 +118,7 @@ body{
 
 .form-control{
     width: 50%;
+    -webkit-column-width: 50%;
     display: inline;
 }
 
