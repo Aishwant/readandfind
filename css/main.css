@@ -12,7 +12,7 @@ body{
 .left-img{
     top: 20%;
     left:5%;
-    background-image: url("../images/books.png");
+    background-image: url("../images/Books.png");
     background-size: cover;
     background-repeat: no-repeat;
     width: 150px;

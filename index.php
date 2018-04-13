@@ -2,7 +2,7 @@
 	include('included_functions.php');
 ?>
 
-<?php new_header("Login"); ?>
+<?php new_header("READ and FIND | Login"); ?>
 
 <div class="left-img"></div>
 
