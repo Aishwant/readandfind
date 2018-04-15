@@ -1,5 +1,37 @@
 <?php
 	include('included_functions.php');
+	$mysqli = db_connection();
+
+	if($mysqli->connect_errno) {
+		die("Could not connect to server ".dbname."<br />");
+	} else {
+		try{
+			$query = "select * ";
+			$query .= "from Users";
+			$result = $mysqli->query($query);
+
+			if(isset($_POST['submit'])){
+				if (isset($_POST['email']) && $passwd = isset($_POST['pwd'])){
+					$email = $_POST['email'];
+					$password = $_POST['pwd'];
+					echo $email." ".$password;
+					$count = -1;
+					while($row = $result->fetch()){
+						if ($email == $row['Email_ID'] && $password == $row['Password']){
+							header('Location: home.php?user='.$row['FName']);
+							$count = 1;
+						}
+					}if($count === -1){
+						echo "<div class='alert-login'>Please login with the correct Email/Password</div>";
+					}
+				}
+			}
+		}
+		catch(PDOException $e)
+		{
+			echo "Database Operations Failed: " . $e->getMessage();
+		}
+	}
 ?>
 
 <?php new_header("READ and FIND | Login"); ?>

@@ -4,6 +4,6 @@
     This is your home page.
 <div class="left-img">
 </div>
-
+<h4><center><?php echo"Hello ".$_GET['user'];?></center></h4>
 </body>
 </html>

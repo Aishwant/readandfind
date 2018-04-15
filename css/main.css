@@ -65,7 +65,7 @@ body{
     padding:0;
 }
 
-.form-style .alert-login{
+.alert-login{
     border: solid rgb(148, 0, 0) 1px;
     background-blend-mode: multiply;
     background-color: #f04141;

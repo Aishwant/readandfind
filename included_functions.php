@@ -1,6 +1,9 @@
 <?php
     function db_connection(){
-        echo 'hello World';
+        require_once('../../connection.php');
+        $mysqli = new PDO('mysql:host=localhost;dbname='.dbname,username,password);
+
+        return $mysqli;
     }
 
     function new_header($title){
