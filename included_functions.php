@@ -18,6 +18,8 @@
 
             <link rel='stylesheet' href='css/bootstrap.min.css' />
             <link rel='stylesheet' href='css/main.css' />
+            <!-- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css' integrity='sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg' crossorigin='anonymous'> -->
+            <link rel='stylesheet' href='fontawesome/css/fontawesome-all.css' />
 
         </head>
         <body>
@@ -57,6 +59,9 @@
                         <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='#'>Genre</a>
                     </div>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' href='logout.php'>Logout <i class='fas fa-sign-out-alt'></i></a>
                 </li>
             </ul>
       </div>
@@ -101,5 +106,12 @@
 
     function password_check(){
         return false;
+    }
+
+    function logout(){
+        $_SESSION['user_id']=null;
+        $_SESSION['email_id']=null;
+        session_destroy();
+        header('Location: /~aghimire/ReadAndFind');
     }
 ?>

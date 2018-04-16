@@ -4,13 +4,17 @@
 
 	require_once('session.php');
 
+	if (logged_in()){
+		header('Location: home.php');
+	}
+
 	if($mysqli->connect_errno) {
 		die("Could not connect to server ".dbname."<br />");
 	} else {
 		try{
 			$query = "select * ";
 			$query .= "from Users";
-			$query .= "where  = ?";
+			//$query .= "where  = ?";
 			$result = $mysqli->query($query);
 			//$result = $mysqli->prepare($query);
 
@@ -24,8 +28,9 @@
 					//while($row = $result->fetch(PDO::FETCH_ASSOC)){
 						if ($email == $row['Email_ID'] && $password == $row['Password']){
 							$_SESSION['email_id']= $row['Email_ID'];
+							$_SESSION['fname']= $row['FName'];
 							$_SESSION['user_id']=$row['User_ID'];
-							header('Location: home.php?user='.$row['FName']);
+							header('Location: home.php');
 							$count = 1;
 						}
 					}if($count === -1){
@@ -68,7 +73,6 @@
 		&nbsp; || &nbsp; <a href="register.php" class="needunderline">Register</a>
 
 	<?php form_setup_end(); ?>
-
 
 	<br>
 

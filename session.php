@@ -10,7 +10,7 @@
     function verify_login(){
         if((!isset($_SESSION['email_id']) && $_SESSION['email_id'] === null) && (!isset($_SESSION['user_id']) && $_SESSION['user_id'] === null)){
             $_SESSION['message'] = 'You must login first!';
-            header('Location: /');
+            header('Location: /~aghimire/ReadAndFind/');
             exit;
         }
     }
