@@ -2,13 +2,17 @@
 	include('included_functions.php');
 	$mysqli = db_connection();
 
+	require_once('session.php');
+
 	if($mysqli->connect_errno) {
 		die("Could not connect to server ".dbname."<br />");
 	} else {
 		try{
 			$query = "select * ";
 			$query .= "from Users";
+			$query .= "where  = ?";
 			$result = $mysqli->query($query);
+			//$result = $mysqli->prepare($query);
 
 			if(isset($_POST['submit'])){
 				if (isset($_POST['email']) && $passwd = isset($_POST['pwd'])){
@@ -17,7 +21,10 @@
 					echo $email." ".$password;
 					$count = -1;
 					while($row = $result->fetch()){
+					//while($row = $result->fetch(PDO::FETCH_ASSOC)){
 						if ($email == $row['Email_ID'] && $password == $row['Password']){
+							$_SESSION['email_id']= $row['Email_ID'];
+							$_SESSION['user_id']=$row['User_ID'];
 							header('Location: home.php?user='.$row['FName']);
 							$count = 1;
 						}
@@ -71,10 +78,4 @@
 
 </section>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
-
-</body>
-</html>
+<?php footer(); ?>
