@@ -15,7 +15,7 @@
         }
     }
 
-    function login_in(){
+    function logged_in(){
         if((!isset($_SESSION['email_id']) && $_SESSION['email_id'] === null) && (!isset($_SESSION['user_id']) && $_SESSION['user_id'] === null)){
             return false;
         }else{
