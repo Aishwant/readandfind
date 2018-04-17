@@ -1,7 +1,19 @@
 <?php
+
     function db_connection(){
         require_once('../../connection.php');
-        $mysqli = new PDO('mysql:host=localhost;dbname='.dbname,username,password);
+
+        if($mysqli->connect_errno) {
+            die("Could not connect to server ".dbname."<br />");
+        } else {
+
+            try{
+                $mysqli = new PDO('mysql:host=localhost;dbname='.dbname,username,password);
+            }catch(PDOException $e){
+                echo "Database Operations Failed: " . $e->getMessage();
+            }
+
+        }
 
         return $mysqli;
     }
@@ -10,6 +22,7 @@
         echo "<!DOCTYPE html>
         <html>
         <head>
+
             <meta http-equiv='Content-Type' content='text/html' charset='utf-8' />
             <meta http-equiv='X-UA-Compatible' content='IE=edge'>
             <meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -64,8 +77,9 @@
                     <a class='nav-link' href='logout.php'>Logout <i class='fas fa-sign-out-alt'></i></a>
                 </li>
             </ul>
-      </div>
+        </div>
     </nav>";
+
     }
 
     function footer(){
