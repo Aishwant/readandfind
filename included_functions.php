@@ -2,20 +2,17 @@
 
     function db_connection(){
         require_once('../../connection.php');
-
-        if($mysqli->connect_errno) {
-            die("Could not connect to server ".dbname."<br />");
-        } else {
-
-            try{
-                $mysqli = new PDO('mysql:host=localhost;dbname='.dbname,username,password);
-            }catch(PDOException $e){
-                echo "Database Operations Failed: " . $e->getMessage();
-            }
-
+        
+        try{
+            $mysqli = new PDO("mysql:host=localhost;dbname=".dbname,username,password);
+            return $mysqli;
+        }catch(PDOException $e){
+            echo "Database Operations Failed: " . $e->getMessage();
         }
+    }
 
-        return $mysqli;
+    function redirect_to($page){
+        header('Location: '.$page);
     }
 
     function new_header($title){
@@ -67,7 +64,7 @@
                         Search Query
                     </a>
                     <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                        <a class='dropdown-item' href='#'>Books Read</a>
+                        <a class='dropdown-item' href='booksread.php'>Books Read</a>
                         <a class='dropdown-item' href='#'>Authors</a>
                         <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='#'>Genre</a>
