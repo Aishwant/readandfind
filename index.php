@@ -5,20 +5,18 @@
 	require_once('session.php');
 
 	if (logged_in()){
-		header('Location: home.php');
+		redirect_to('home.php');
 	}
 
 	$query = "select * ";
 	$query .= "from Users";
-	//$query .= "where  = ?";
+
 	$result = $mysqli->query($query);
-	//$result = $mysqli->prepare($query);
 
 	if(isset($_POST['submit'])){
-		if (isset($_POST['email']) && $passwd = isset($_POST['pwd'])){
+		if (isset($_POST['email']) && isset($_POST['pwd'])){
 			$email = $_POST['email'];
 			$password = $_POST['pwd'];
-			echo $email." ".$password;
 			$count = -1;
 			while($row = $result->fetch()){
 			//while($row = $result->fetch(PDO::FETCH_ASSOC)){
@@ -26,7 +24,7 @@
 					$_SESSION['email_id']= $row['Email_ID'];
 					$_SESSION['fname']= $row['FName'];
 					$_SESSION['user_id']=$row['User_ID'];
-					header('Location: home.php');
+					redirect_to('home.php');
 					$count = 1;
 				}
 			}if($count === -1){
