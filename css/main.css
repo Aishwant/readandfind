@@ -119,6 +119,7 @@ body{
 .form-control{
     width: 50%;
     -webkit-column-width: 50%;
+    /* column-width:50%; */
     display: inline;
 }
 
@@ -156,4 +157,5 @@ body{
     border: solid 1px #484848;
     border-radius: 10%;
     padding-left: 5%;
+    margin-bottom: 15px !important;
 }
