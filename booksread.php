@@ -24,7 +24,7 @@
     <div class="left-img">
     </div>
     <br />
-    <h4><center><?php echo"Read Books";?></center></h4>
+    <h4><center><?php echo"Books You've Read";?></center></h4>
 
     <div class='container'>
         <div class="row">
