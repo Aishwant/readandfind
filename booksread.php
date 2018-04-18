@@ -16,8 +16,7 @@
         $query = "select * ";
         $query .= "from Users_Books natural join Books";
 
-        $result = $mysqli->prepare($query);
-        $result->execute();
+        $result = $mysqli->query($query);
         //print_r($result);
 
 ?>
@@ -38,7 +37,7 @@
                     //print_r($result);
                     //echo 'reached';
                 try{
-                    while($row = $result->fetch(PDO::FETCH_ASSOC)){
+                    while($row = $result->fetch()){
                         if ($row['User_ID']==$user_id){
                             echo"<div class='books'>
 
