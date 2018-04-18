@@ -1,4 +1,6 @@
-<?php include_once('included_functions.php');
+<?php
+
+    include_once('included_functions.php');
 
     require_once('session.php');
 
@@ -17,7 +19,6 @@
         $query .= "from Users_Books natural join Books";
 
         $result = $mysqli->query($query);
-        //print_r($result);
 
 ?>
 
@@ -32,32 +33,34 @@
             </div>
             <div class = "col-lg-6 col-md-7 col-sm-12 col-xs-12">
                 <br /><br />
-
+                <div id="numread"></div>
                 <?php
+
                     //print_r($result);
                     //echo 'reached';
-                try{
+                    $count =0;
                     while($row = $result->fetch()){
-                        if ($row['User_ID']==$user_id){
-                            echo"<div class='books'>
+                            if ($row['User_ID']==$user_id){
+                                $count=$count+1;
+                                echo"<div class='books'>
 
-                                <center>".$row['Book_Name']."<br /></center><br />
+                                    <center>".$row['Book_Name']."<br /></center><br />
 
-                                Author: ".$row['Author_ID']."<br />
-                                Genre: ".$row['Genre_ID']."<br />
-                                Year Read: ".$row['Year_Read']."<br />
+                                    Author: ".$row['Author_ID']."<br />
+                                    Genre: ".$row['Genre_ID']."<br />
+                                    Year Read: ".$row['Year_Read']."<br />
 
-                                <div style='text-align:right; padding-right:5%;'>
-                                    <a href='#'>Remove</a> | <a href='#'>Edit</a>
-                                </div>
-                                <br/>
+                                    <div style='text-align:right; padding-right:5%;'>
+                                        <a href='#'>Remove</a> | <a href='#'>Edit</a>
+                                    </div>
+                                    <br/>
 
-                            </div>";
-                        }
+                                </div>";
+                            }
                     }
-                }catch(PDOException $e){
-                    echo "Operation failed: ".$e->getMessage();
-                }
+                    echo "<script>
+                    document.getElementById('numread').innerHTML='Number of Books Read: $count';
+                    </script>";
                 ?>
 
             </div>
