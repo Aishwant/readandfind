@@ -2,7 +2,7 @@
 
     function db_connection(){
         require_once('../../connection.php');
-        
+
         try{
             $mysqli = new PDO("mysql:host=localhost;dbname=".dbname,username,password);
             return $mysqli;
@@ -51,7 +51,7 @@
                     <a class='nav-link' href='home.php'>Home <span class='sr-only'>(current)</span></a>
                 </li>
                 <li class='nav-item'>
-                    <a class='nav-link' href='home.php'>New Entry <i class='fas fa-book'></i> <span class='sr-only'>(current)</span></a>
+                    <a class='nav-link' href='newentry.php'>New Entry <i class='fas fa-book'></i> <span class='sr-only'>(current)</span></a>
                 </li>
                 <li class='nav-item'>
                     <a class='nav-link' href='update.php'>Update</a>
@@ -69,8 +69,9 @@
                     <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                         <a class='dropdown-item' href='booksread.php'>Books Read</a>
                         <a class='dropdown-item' href='#'>Authors</a>
-                        <div class='dropdown-divider'></div>
                         <a class='dropdown-item' href='#'>Genre</a>
+                        <div class='dropdown-divider'></div>
+                        <a class='dropdown-item' href='commonbooks.php'>People With Common Books</a>
                     </div>
                 </li>
                 <li class='nav-item'>
