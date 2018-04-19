@@ -9,19 +9,20 @@ body{
     padding-top: 5%;
 }
 
-.left-img{
-    top: 20%;
-    left:5%;
-    background-image: url("../images/Books.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    opacity: 0.9;
-    position: fixed;
-    z-index: -1;
+@media only screen and (min-width:750px){
+    .left-img{
+        top: 20%;
+        left:5%;
+        background-image: url("../images/Books.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        opacity: 0.9;
+        position: fixed;
+        z-index: -1;
+    }
 }
-
 .form{
     margin-top: 5%;
 }
