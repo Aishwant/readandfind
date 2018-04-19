@@ -32,13 +32,14 @@ if (isset($_POST['submit'])){
 ?>
 <div class="left-img"></div>
 <section class="content">
-    <div class="container">
+    <div class="container text-center">
         <form method="POST" action="">
             <input type="text" name="searchbook" placeholder="Name the book">
             <input type="submit" name="submit" value="search" class="btn btnCSS border">
         </form>
         <div class="col-lg-12" id="updatedfield">
             <?php
+
                 if($code!=1 && $code !==null){
                     $val = $code;
                 }elseif($code){
