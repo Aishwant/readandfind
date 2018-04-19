@@ -28,12 +28,12 @@ if(isset($_POST['submit'])){
             }
             $id = $id + 1;
             if($c === 0){
-                $query1 = "insert into Users (User_ID, Email_ID, Password, FName, LName) ";
-                $query1 .= "values ($id,'$email','$password','$fname','$lname')";
-                $mysqli->query($query1);
+                $query1 = ("INSERT INTO Users(User_ID, Email_ID, Password, FName, LName) VALUES (:id,:email,:pwd,:fname,:lname)");
+                $result1 = $mysqli->prepare($query1);
+                $result1->execute(array('id'=>$id,'email'=>$email,'pwd'=>$password,'fname'=>$fname,'lname'=>$lname));
                 $_SESSION['email_id'] = $email;
                 $_SESSION['fname'] = $fname;
-                $_SESSION['user_id'] = $id+1;
+                $_SESSION['user_id'] = $id;
                 header('Location: home.php');
             }else{
                 echo"<div class='alert-login'>Email already exists</div>";
