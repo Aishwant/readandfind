@@ -5,6 +5,7 @@
 
 <?php new_header("Register");
     include_once("session.php");
+    verify_login();
 ?>
 
 <?php
