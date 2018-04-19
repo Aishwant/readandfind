@@ -5,6 +5,7 @@
 
         try{
             $mysqli = new PDO("mysql:host=localhost;dbname=".dbname,username,password);
+            $mysqli->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $mysqli;
         }catch(PDOException $e){
             echo "Database Operations Failed: " . $e->getMessage();
@@ -28,63 +29,62 @@
 
             <link rel='stylesheet' href='css/bootstrap.min.css' />
             <link rel='stylesheet' href='css/main.css' />
-            <!-- <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css' integrity='sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg' crossorigin='anonymous'> -->
             <link rel='stylesheet' href='fontawesome/css/fontawesome-all.css' />
 
         </head>
         <body>
-
-        <section class='header'>
-
-        </section>";
+        <section class='header'>";
     }
 
     function nav_bar(){
-        echo "<nav class='navbar navbar-expand-lg navbar-light main_color'>
-        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-            <span class='navbar-toggler-icon'></span>
-        </button>
+        echo "
+            <nav class='navbar navbar-expand-lg navbar-light main_color'>
+                <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+                    <span class='navbar-toggler-icon'></span>
+                </button>
 
-        <div class='collapse navbar-collapse' id='navbarSupportedContent'>
-            <ul class='navbar-nav w-100 justify-content-center'>
-                <li class='nav-item active'>
-                    <a class='nav-link' href='home.php'>Home <span class='sr-only'>(current)</span></a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link' href='newentry.php'>New Entry <i class='fas fa-book'></i> <span class='sr-only'>(current)</span></a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link' href='update.php'>Update</a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link' href='#'>Delete</a>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link' href='#'>Search All</a>
-                </li>
-                <li class='nav-item dropdown'>
-                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                        Search Query
-                    </a>
-                    <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
-                        <a class='dropdown-item' href='booksread.php'>Books Read</a>
-                        <a class='dropdown-item' href='#'>Authors</a>
-                        <a class='dropdown-item' href='#'>Genre</a>
-                        <div class='dropdown-divider'></div>
-                        <a class='dropdown-item' href='commonbooks.php'>People With Common Books</a>
-                    </div>
-                </li>
-                <li class='nav-item'>
-                    <a class='nav-link' href='logout.php'>Logout <i class='fas fa-sign-out-alt'></i></a>
-                </li>
-            </ul>
-        </div>
-    </nav>";
+                <div class='collapse navbar-collapse' id='navbarSupportedContent'>
+                    <ul class='navbar-nav w-100 justify-content-center'>
+                        <li class='nav-item active'>
+                            <a class='nav-link' href='home.php'>Home <span class='sr-only'>(current)</span></a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='newentry.php'>New Entry <i class='fas fa-book'></i> <span class='sr-only'>(current)</span></a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='update.php'>Update</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>Delete</a>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='#'>Search All</a>
+                        </li>
+                        <li class='nav-item dropdown'>
+                            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                                Search Query
+                            </a>
+                            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+                                <a class='dropdown-item' href='booksread.php'>Books Read</a>
+                                <a class='dropdown-item' href='#'>Authors</a>
+                                <a class='dropdown-item' href='#'>Genre</a>
+                                <div class='dropdown-divider'></div>
+                                <a class='dropdown-item' href='commonbooks.php'>People With Common Books</a>
+                            </div>
+                        </li>
+                        <li class='nav-item'>
+                            <a class='nav-link' href='logout.php'>Logout <i class='fas fa-sign-out-alt'></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </section>";
 
     }
 
     function footer(){
-        echo "<script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
+        echo "
+        <script src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous'></script>
         <script src='js/bootstrap.min.js'></script>
         <script src='js/main.js'></script>
