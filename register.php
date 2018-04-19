@@ -5,7 +5,9 @@
 
 <?php new_header("Register");
     include_once("session.php");
-    verify_login();
+    if(logged_in()){
+        redirect_to('home.php');
+    }
 ?>
 
 <?php
