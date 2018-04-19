@@ -1,4 +1,6 @@
-<?php include_once('included_functions.php');
+<?php
+
+    include_once('included_functions.php');
 
     require_once('session.php');
 
@@ -13,7 +15,7 @@
         $user_id = (int)$_SESSION['user_id'];
 
         $query = "select * ";
-        $query .= "from Users_Books natural join Books";
+        $query .= "from Users_Books natural join Books natural join Author natural join Genre";
 
         $result=$mysqli->query($query);
         //print_r($result);
@@ -41,8 +43,8 @@
 
                                 <center>".$row['Book_Name']."<br /></center><br />
 
-                                Author: ".$row['Author_ID']."<br />
-                                Genre: ".$row['Genre_ID']."<br />
+                                Author: ".$row['FName']." ".$row['LName']."<br />
+                                Genre: ".$row['GenreN']."<br />
                                 Year Read: ".$row['Year_Read']."<br />
 
                                 <div style='text-align:right; padding-right:5%;'>

@@ -16,7 +16,7 @@
         $user_id = (int)$_SESSION['user_id'];
 
         $query = "select * ";
-        $query .= "from Users_Books natural join Books";
+        $query .= "from Users_Books natural join Books natural join Author natural join Genre";
 
         $result = $mysqli->query($query);
 
@@ -35,7 +35,6 @@
                 <br /><br />
                 <div id="numread"></div>
                 <?php
-
                     //print_r($result);
                     //echo 'reached';
                     $count =0;
@@ -46,8 +45,8 @@
 
                                     <center>".$row['Book_Name']."<br /></center><br />
 
-                                    Author: ".$row['Author_ID']."<br />
-                                    Genre: ".$row['Genre_ID']."<br />
+                                    Author: ".$row['FName']." ".$row['LName']."<br />
+                                    Genre: ".$row['GenreN']."<br />
                                     Year Read: ".$row['Year_Read']."<br />
 
                                     <div style='text-align:right; padding-right:5%;'>
