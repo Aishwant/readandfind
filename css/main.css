@@ -75,7 +75,7 @@ body{
     color: #fff !important;
     -webkit-text-fill-color:#fff;
     padding: 4px;
-    top:0px;
+    top:10%;
 }
 
 .register-form{
