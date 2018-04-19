@@ -4,31 +4,22 @@
 ?>
 
 <?php new_header("Register");
-
     include_once("session.php");
-
 ?>
 
 <?php
-
 if(isset($_POST['submit'])){
-
     if(isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['email']) && isset($_POST['pwd']) && isset($_POST['re-pwd'])){
         if($_POST['pwd']===$_POST['re-pwd']){
             // $query = "INSERT INTO Users VALUES (6,".$_POST['email'].",".$_POST['pwd'].",".$_POST['fname'].",".$_POST['lname'].")";
-
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
             $email = $_POST['email'];
             $password = $_POST['pwd'];
-
             $query = "select * ";
             $query .= "from Users";
-
             $result = $mysqli->query($query);
-
             $c=0;//a variable to check if the email address exists or not
-
             while($row = $result->fetch()){
                 if($row['Email_ID']==$email){
                     $c = 1;
@@ -52,7 +43,6 @@ if(isset($_POST['submit'])){
         }
     }
 }
-
 ?>
 
 <div class="left-img"></div>
