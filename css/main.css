@@ -114,7 +114,7 @@ body{
     color: #f3a62c !important;
     -webkit-text-fill-color: #f3a62c;
     background-color: #fff!important;
-    border-color: #fff;
+    border-color: #ccc;
 }
 
 .form-control{
