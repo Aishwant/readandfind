@@ -19,7 +19,7 @@ if (isset($_POST['submit'])){
         $code=null;
         $val=null;
         while($row = $result->fetch()){
-            if($row['Book_Name']==$_POST['searchbook']){
+            if(strtolower($row['Book_Name'])==strtolower($_POST['searchbook'])){
                 $code = $code.$row['FName']." ".$row['LName']."<br />";
             }
         }
