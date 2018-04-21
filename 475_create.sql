@@ -7,9 +7,19 @@ DROP TABLE IF EXISTS Users_Books,Books,Author, Genre, Users;
 -- Table: Author
 CREATE TABLE Author (
     Author_ID int NOT NULL,
-    FName char(20) NOT NULL,
-    LName char(20) NOT NULL,
+    AFName char(20),
+    ALName char(20),
     PRIMARY KEY (Author_ID)
+);
+
+-- Table: Books
+CREATE TABLE Books (
+    Book_ID int NOT NULL,
+    ISBN char(50),
+    Book_Name char(50),
+    Author_ID int,
+    Genre_ID int,
+    PRIMARY KEY (Book_ID)
 );
 
 -- Table: Genre
@@ -17,16 +27,6 @@ CREATE TABLE Genre (
     Genre_ID int NOT NULL,
     GenreN char(50) NOT NULL,
     PRIMARY KEY (Genre_ID)
-);
-
--- Table: Books
-CREATE TABLE Books (
-    Book_ID int NOT NULL,
-    ISBN char(50) NOT NULL,
-    Book_Name char(50),
-    Author_ID int NOT NULL,
-    Genre_ID int NOT NULL,
-    PRIMARY KEY (Book_ID)
 );
 
 -- Table: User
@@ -43,7 +43,7 @@ CREATE TABLE Users (
 CREATE TABLE Users_Books (
     User_ID int NOT NULL,
     Book_ID int NOT NULL,
-    Year_Read int NOT NULL,
+    Year_Read int,
     PRIMARY KEY (User_ID,Book_ID)
 );
 
@@ -63,6 +63,5 @@ ALTER TABLE Users_Books ADD CONSTRAINT Users_Books_Books FOREIGN KEY Users_Books
 -- Reference: Users_Books_User (table: Users_Books)
 ALTER TABLE Users_Books ADD CONSTRAINT Users_Books_User FOREIGN KEY Users_Books_User (User_ID)
     REFERENCES Users (User_ID);
-
 
 -- End of file.
