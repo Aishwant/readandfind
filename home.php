@@ -15,7 +15,7 @@
         $user_id = (int)$_SESSION['user_id'];
 
         $query = "select * ";
-        $query .= "from Users_Books natural join Books natural join Author natural join Genre";
+        $query .= "from Users_Books natural join Books natural join Author natural join Genre ORDER BY Users_Books.Book_ID DESC";
 
         $result=$mysqli->query($query);
         //print_r($result);
@@ -43,7 +43,7 @@
 
                                 <center>".$row['Book_Name']."<br /></center><br />
 
-                                Author: ".$row['FName']." ".$row['LName']."<br />
+                                Author: ".$row['AFName']." ".$row['ALName']."<br />
                                 Genre: ".$row['GenreN']."<br />
                                 Year Read: ".$row['Year_Read']."<br />
 
