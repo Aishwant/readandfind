@@ -38,6 +38,7 @@
                 $c=0;//a variable to check if the Book exists or not for the user
                 $c1=0;//check if the book exist in the whole database
                 $a=0;//a variable to check if the Author exists or not
+                $b=0;
                 $b_ID=0;//keep track of the book's id
                 $a_ID=0;//keep track of the author's id
 
@@ -48,8 +49,9 @@
                 }
                 $result_books=$mysqli->query("SELECT * FROM Books ORDER BY Book_ID");
                 while($row = $result_books->fetch()){
-                    if(strtolower($row['Book_Name'])==strtolower($book_name)){
+                    if(strtolower($row['Book_Name'])===strtolower($book_name)){
                         $c1=1;
+                        $b=$row['Book_ID'];
                     }
                     $b_ID=$row['Book_ID'];
                 }
@@ -65,8 +67,8 @@
                 $b_ID=$b_ID+1;
 
                 if($c === 1){
-                    echo"<div class='alert-login'>Book already exists</div>";
-                }elseif($c===0 && $c===0){
+                    $_SESSION['message']="<div class='alert-login'>Book already exists</div>";
+                }elseif($c1===0 && $c===0){
                     if($a === 0){
 
                         //insert into author
@@ -94,12 +96,13 @@
                         $result_insert_UB = $mysqli->prepare($query_insert_UB);
                         $result_insert_UB->execute(array('yr'=>$yearRead));
                     }
-                    echo"<div style='background-color:#aaa;'>Added</div>";
-                }elseif($c1===1 && $c===0){
-                    $query_insert_UB =("INSERT INTO Users_Books(User_ID, Book_ID, Year_Read) VAlUES (".$_SESSION['user_id'].",$b_ID,:yr)");
+                    $_SESSION['message']="<div style='background-color:#aaa;'>Added</div>";
+
+                }elseif($c1===1 && $c===0){ //if book is already in the book table
+                    $query_insert_UB =("INSERT INTO Users_Books(User_ID, Book_ID, Year_Read) VAlUES (".$_SESSION['user_id'].",$b,:yr)");
                     $result_insert_UB = $mysqli->prepare($query_insert_UB);
                     $result_insert_UB->execute(array('yr'=>$yearRead));
-                    echo"<div style='background-color:#aaa;'>Added</div>";
+                    $_SESSION['message']="<div style='background-color:#aaa;'>Added</div>";
                 }
         }
     }
@@ -108,6 +111,9 @@
 
 
 <div class="left-img"></div>
+
+<?php echo message(); ?>
+
 <section class="content">
     <div class="container text-center">
         <form method="POST" action="">
@@ -130,7 +136,7 @@
             ?>
             </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br /><br />
             Year Read: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="yearRead" class="form-control" placeholder="2018"><br /><br /><br />
