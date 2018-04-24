@@ -25,6 +25,13 @@
     <div class="left-img">
     </div>
     <br />
+    <?php
+        $message = message();
+        if($message){
+            echo $message;
+        }
+    ?>
+
     <h4><center><?php echo"Books You've Read";?></center></h4>
 
     <div class='container'>
@@ -50,7 +57,7 @@
                                     Year Read: ".$row['Year_Read']."<br />
 
                                     <div style='text-align:right; padding-right:5%;'>
-                                        <a href='#'>Remove</a> | <a href='#'>Edit</a>
+                                        <a href='deletebook.php?bookid=".$row['Book_ID']."'>Remove</a> | <a href='#'>Edit</a>
                                     </div>
                                     <br/>
 

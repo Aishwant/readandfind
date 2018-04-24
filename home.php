@@ -27,13 +27,20 @@
     <br />
     <h4><center><?php echo"Hello ".$_SESSION['fname'];?></center></h4>
 
+    <?php
+        $message = message();
+        if($message){
+            echo $message;
+        }
+    ?>
+
     <div class='container'>
         <div class="row">
             <div class = "col-lg-6 col-md-5">
             </div>
             <div class = "col-lg-6 col-md-7 col-sm-12 col-xs-12">
-                <br />Recent Entries: <br /><br />
-
+                <br />Recent Entries:
+                <div style='text-align:right; margin: 0px;'><a href='booksread.php'>See More...</a></div><br />
                 <?php
                     //print_r($result);
                     $b=0;
@@ -48,7 +55,7 @@
                                 Year Read: ".$row['Year_Read']."<br />
 
                                 <div style='text-align:right; padding-right:5%;'>
-                                    <a href='#'>Remove</a> | <a href='#'>Edit</a>
+                                    <a href='deletebook.php?bookid=".$row['Book_ID']."'>Remove</a> | <a href='editbook.php?bookid=".$row['Book_ID']."'>Edit</a>
                                 </div>
                                 <br/>
 
@@ -57,10 +64,8 @@
                         }
                     }
 
-                echo "<div style='text-align:right;'><a href='booksread.php'>See More...</a></div><br />";
-
                 ?>
-
+                    <br />
             </div>
         </div>
     </div>
