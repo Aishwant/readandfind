@@ -3,7 +3,10 @@
     session_start();
 
     function message(){
-        if ($_SESSION['message'] != null){
+        if ($_SESSION['message'] !== ""){
+            $message = $_SESSION['message'];
+            $_SESSION['message'] = "";
+            return $message;
         }
     }
 
