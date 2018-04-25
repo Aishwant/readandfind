@@ -4,7 +4,11 @@
 
 	require_once('session.php');
 
+	$message = message();
+	if($message) echo $message;
+
 	if (logged_in()){
+		$_SESSION['message'] = '<center><h5>Welcome Back!</h5></center>';
 		redirect_to('home.php');
 	}
 
