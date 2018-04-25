@@ -13,15 +13,13 @@ nav_bar();
 
 if (isset($_POST['submit'])){
     if(isset($_POST['searchbook']) && !empty($_POST['searchbook'])){
-        $query="select Books.Book_Name, Books.Book_ID, Users.FName, Users.LName, Users_Books.Year_Read ";
-        $query.="from Books natural join Users_Books natural join Users";
+
+        $query = "select Users.User_ID, Users.FName, Users.LName from Users natural join Users_Books where Users_Books.Book_ID = (select Books.Book_ID from Books where Books.Book_Name='".$_POST['searchbook']."')";
         $result = $mysqli->query($query);
         $code=null;
         $val=null;
         while($row = $result->fetch()){
-            if(strtolower($row['Book_Name'])==strtolower($_POST['searchbook'])){
-                $code = $code.$row['FName']." ".$row['LName']."<br />";
-            }
+            $code = $code."<a href=\"profile.php?id=".$row["User_ID"]."\">".$row['FName']." ".$row['LName']."</a>"."<br />";
         }
         if($code ===null){ $code = 1;}
     }else{
