@@ -19,7 +19,10 @@
         $query .= "from Users_Books natural join Books natural join Author natural join Genre ORDER BY Users_Books.Book_ID DESC";
 
         $result = $mysqli->query($query);
-
+        $queryCount = "SELECT count(Book_ID) as `num` from Users_Books where User_ID=$user_id";
+        $resultCount = $mysqli->query($queryCount);
+        $rowCount = $resultCount->fetch();
+        $count=$rowCount['num'];
 ?>
 
     <div class="left-img">
@@ -42,12 +45,9 @@
                 <br /><br />
                 <div id="numread"></div>
                 <?php
-                    //print_r($result);
-                    //echo 'reached';
-                    $count =0;
+
                     while($row = $result->fetch()){
                             if ($row['User_ID']==$user_id){
-                                $count=$count+1;
                                 echo"<div class='books'>
 
                                     <center>".$row['Book_Name']."<br /></center><br />
