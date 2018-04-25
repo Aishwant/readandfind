@@ -44,19 +44,19 @@ INSERT INTO Author VALUES (4, "Nicholas", "Spark");
 INSERT INTO Author VALUES (5, "Laxmi P", "Devkota");
 
 -- Populating Books
-INSERT INTO Books VALUES (1,"123491237-BN","Romeo and Juliet",1,1);
+INSERT INTO Books VALUES (1,"123391237-BN","Romeo and Juliet",1,1);
 INSERT INTO Books VALUES (2,"123491237-BN","Macbeth",1,7);
-INSERT INTO Books VALUES (3,"123491237-BN","Angel and Demons",2,2);
-INSERT INTO Books VALUES (4,"123491237-BN","Harry Porter and the Sorcerer's Stone",3,3);
-INSERT INTO Books VALUES (5,"123491237-BN","The Tempest",1,1);
-INSERT INTO Books VALUES (6,"123491237-BN","Hamlet",1,7);
-INSERT INTO Books VALUES (7,"123491237-BN","Cafe",1,1);
-INSERT INTO Books VALUES (8,"123491237-BN","Inferno",2,2);
+INSERT INTO Books VALUES (3,"123691237-BN","Angel and Demons",2,2);
+INSERT INTO Books VALUES (4,"123191237-BN","Harry Porter and the Sorcerer's Stone",3,3);
+INSERT INTO Books VALUES (5,"123791237-BN","The Tempest",1,1);
+INSERT INTO Books VALUES (6,"123421237-BN","Hamlet",1,7);
+INSERT INTO Books VALUES (7,"123496237-BN","Cafe",1,1);
+INSERT INTO Books VALUES (8,"123491937-BN","Inferno",2,2);
 INSERT INTO Books VALUES (9,"123491237-BN","The Notebook",4,1);
-INSERT INTO Books VALUES (10,"123491237-BN","A Walk to Remember",4,1);
-INSERT INTO Books VALUES (11,"123491237-BN","See Me",4,1);
-INSERT INTO Books VALUES (12,"123491237-BN","Harry Porter and the Chamber of Secrets",3,3);
-INSERT INTO Books VALUES (13,"123491237-BN","The Casual Vacancy",3,6);
+INSERT INTO Books VALUES (10,"123491937-BN","A Walk to Remember",4,1);
+INSERT INTO Books VALUES (11,"133491237-BN","See Me",4,1);
+INSERT INTO Books VALUES (12,"123091237-BN","Harry Porter and the Chamber of Secrets",3,3);
+INSERT INTO Books VALUES (13,"123491217-BN","The Casual Vacancy",3,6);
 
 -- Populating Users
 INSERT INTO Users VALUES (1,"aghimire@go.olemiss.edu","##12","Aishwant","Ghimire");
