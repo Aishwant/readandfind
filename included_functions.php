@@ -73,6 +73,9 @@
                             </div>
                         </li>
                         <li class='nav-item'>
+                            <a class='nav-link' href='profile.php?id=".$_SESSION['user_id']."'>My Profile</a>
+                        </li>
+                        <li class='nav-item'>
                             <a class='nav-link' href='logout.php'>Logout <i class='fas fa-sign-out-alt'></i></a>
                         </li>
                     </ul>
