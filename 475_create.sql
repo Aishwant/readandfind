@@ -15,7 +15,7 @@ CREATE TABLE Author (
 -- Table: Books
 CREATE TABLE Books (
     Book_ID int NOT NULL,
-    ISBN char(50),
+    ISBN char(50) NOT NULL,
     Book_Name char(50),
     Author_ID int,
     Genre_ID int,
