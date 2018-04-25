@@ -51,23 +51,12 @@
                         <li class='nav-item'>
                             <a class='nav-link' href='newentry.php'>New Entry <i class='fas fa-book'></i> <span class='sr-only'>(current)</span></a>
                         </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='update.php'>Update</a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#'>Delete</a>
-                        </li>
-                        <li class='nav-item'>
-                            <a class='nav-link' href='#'>Search All</a>
-                        </li>
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                                 Search Query
                             </a>
                             <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
                                 <a class='dropdown-item' href='booksread.php'>Books Read</a>
-                                <a class='dropdown-item' href='#'>Authors</a>
-                                <a class='dropdown-item' href='#'>Genre</a>
                                 <div class='dropdown-divider'></div>
                                 <a class='dropdown-item' href='commonbooks.php'>People With Common Books</a>
                             </div>
